@@ -1,0 +1,73 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Robot Controller</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+	<div class="left-side">
+		<h2>Manual control</h2>
+		<div class="controls">
+			<button onclick="switchMode('manual')">Manual Mode</button><br>
+			<button onclick="openContainer()">Open Box</button>
+			<button onclick="switchLights()">Switch Lights</button>
+			<button onclick="stopMotors()">Stop Motors</button>
+		</div>
+        <div class="arrow-controls">
+			<div>
+			<button onclick="move('Q')">↖</button>
+			<button onclick="move('F')">↑</button>
+			<button onclick="move('E')">↗</button>
+			</div>
+			<div>
+			<button onclick="move('L')">←</button>
+			<button onclick="move('R')">→</button>
+			</div>
+			<div>
+            <button onclick="move('Z')">↙</button>
+            <button onclick="move('B')">↓</button>
+            <button onclick="move('C')">↘</button>
+            </div>
+        </div>
+		<div class="stream">
+			<div>
+			<img id="camera" src="{{ url_for('video_feed') }}">
+			</div>
+			<label for="start-stream">Camera stream</label>
+			<button id="start-stream" onclick="startCameraStream()">On</button>
+			<button id="stop-stream" onclick="stopCameraStream()">Off</button>
+		</div>
+
+    </div>
+        
+	<div class="right-side">
+		<h2>Autonomous navigation</h2>
+		<div class="controls">
+			<button onclick="switchMode('automatic')">Autonomous Mode</button><br>
+		</div>
+		<div class="search-container">
+			<input type="text" id="addressInput" placeholder="Enter address...">
+			<button onclick="searchAddress()">Search</button>
+		</div>
+		<div id="map" class="map"></div>
+        <div class="controls">
+			<label for="number-input">Customer telephone number:</label>
+			<input id="number-input" type="text" placeholder="Enter number...">
+			<button onclick="startJourney()">Deliver</button>
+        </div>
+	</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByDrVBl1sulrUEBO353ZwzPN7qfOx0laA&libraries=places,geometry&callback=initMap"></script>
+
+</body>
+</html>
+

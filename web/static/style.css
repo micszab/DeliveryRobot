@@ -1,0 +1,115 @@
+/* static/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.left-side{
+    background-color: #33B7A8;
+}
+
+.right-side{
+  background-color: #D4AF37;
+}
+
+.left-side,
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls button {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px;
+    border: 3px solid black;
+    color: black;
+}
+
+.controls input {
+    width: 40%;
+    height: 15px;
+    padding: 5px;
+    font-size: 10px;
+    margin: 5px;
+    border: 3px solid black;
+    color: black;
+}
+
+.arrow-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    color: black;
+    background-color: #ccc;
+}
+
+.arrow-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    margin: 3px;
+    align-items: center;
+    border: 3px solid black;
+    color: black
+}
+
+.arrow-controls div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 95%;
+    height: 30px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    align-items: center;
+    border: 3px solid black;
+    color: black;
+}
+
+.stream img {
+    margin-top: 10px;
+    width: 95%;
+    height: 400px;
+    background-color: #ccc;
+    align-items: center;
+}
+
+.stream button {
+    width: 50px;
+    height: 20px;
+    padding: 2px;
+    font-size: 10px;
+    margin: 5px;
+    border: 3px solid black;
+    color: black;
+    align-items: center;
+}
+
+.map {
+    margin: 10px;
+    height: 540px; 
+    width: 95%;
+    background-color: #ccc;
+    align-items: center;
+}
